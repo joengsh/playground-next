@@ -25,7 +25,7 @@ const JobPage: React.FC<Props> = ({ getJobs }) => {
       <section className="w-full px-4 py-24 mx-auto max-w-7xl md:w-4/5">
         <div className="grid grid-col-1 gap-10 md:grid-cols-2 lg:grid-col-2 xl:grid-cols-3">
           {getJobs.map((job) => (
-            <Link key={job.id} href={"/jobs/" + job.id}>
+            <Link key={job.id} href={"/jobs/" + job.id} legacyBehavior>
               <div>
                 <h2 className="mb-2 text-xl font-bold leading-snug text-gray-900">
                   <a href="#" className="text-gray-900 hover:text-purple-700">
@@ -58,13 +58,11 @@ const JobPage: React.FC<Props> = ({ getJobs }) => {
         </div>
         {/* btns */}
         <div className="flex flex-col items-center justify-center mt-20 space-x-0 space-y-2 md:space-x-2 md:space-y-0 md:flex-row">
-          <Link href="/">
-            <a
-              href="#"
-              className="px-3 py-2 text-indigo-500 border border-indigo-500 border-solid hover:text-black md:w-auto"
-            >
-              Home
-            </a>
+          <Link
+            href="/"
+            className="px-3 py-2 text-indigo-500 border border-indigo-500 border-solid hover:text-black md:w-auto"
+          >
+            Home
           </Link>
         </div>
       </section>
